@@ -21,18 +21,11 @@ public class ManageNewsTest extends Base {
 		login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnSignInButton();
-		/*WebElement manageNews = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']"));
-		manageNews.click();
-		WebElement newbutton = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
-		newbutton.click();
-		WebElement newsInfo =driver.findElement(By.id("news"));
-		newsInfo.sendKeys("HI");
-		WebElement save =driver.findElement(By.xpath("//button[@type='submit']"));
-		save.click();*/
 		ManageNewsPage managenews =new ManageNewsPage(driver);
 		managenews.clickManageNewsOption();
 		managenews.clickNewButton();
-		managenews.enterTheNewsOnNewsColumn("HLOO");
+		String newscloumn = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
+		managenews.enterTheNewsOnNewsColumn(newscloumn);
 		managenews.clickSaveButton();
 		
 	

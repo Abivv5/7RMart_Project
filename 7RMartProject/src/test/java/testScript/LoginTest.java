@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -19,6 +20,8 @@ public class LoginTest extends Base {
 		login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnSignInButton();
+		boolean isDashBoardDisplayed = login.isDashBoardDisplayed();
+		Assert.assertTrue(isDashBoardDisplayed,"User is unable to login with valid credentials");
 	}
 
 	@Test
@@ -29,6 +32,9 @@ public class LoginTest extends Base {
 		login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnSignInButton();
+		String expectedResult = "7rmart supermarket";
+		String actualResult = login.getTextFromLoginText();
+		Assert.assertEquals(actualResult, expectedResult,"User is able to login invalid password");
 	}
 
 	@Test
@@ -39,6 +45,9 @@ public class LoginTest extends Base {
 		login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnSignInButton();
+		String expectedResult = "7rmart supermarket";
+		String actualResult = login.getTextFromLoginText();
+		Assert.assertEquals(actualResult, expectedResult,"User is able to login invalid username");
 	}
 
 	@Test
@@ -49,6 +58,9 @@ public class LoginTest extends Base {
 		login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnSignInButton();
+		String expectedResult = "7rmart supermarket";
+		String actualResult = login.getTextFromLoginText();
+		Assert.assertEquals(actualResult, expectedResult,"User is able to login invalid credentiuals");
 	}
 
 }
