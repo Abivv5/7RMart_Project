@@ -18,6 +18,9 @@ public class HomePage {
 	@FindBy(xpath = "//i[@class='ace-icon fa fa-power-off']")
 	private WebElement logoutField;
 
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")
+	private WebElement homeText;
+
 	public void clickAdminButton() {
 		adminField.click();
 	}
@@ -25,4 +28,13 @@ public class HomePage {
 	public void clickLogoutButton() {
 		logoutField.click();
 	}
+
+	public boolean isHomeDisplayed() {
+		return homeText.isDisplayed();
+	}
+
+	public String getTextFromhomeText() {
+		return homeText.getText();
+	}
+
 }

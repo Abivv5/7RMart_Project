@@ -22,6 +22,9 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement save;
 
+	@FindBy(xpath = "//h3[text()='Enter News Informations']")
+	private WebElement manageNewsText;
+
 	public void clickManageNewsOption() {
 		manageNews.click();
 	}
@@ -36,6 +39,14 @@ public class ManageNewsPage {
 
 	public void clickSaveButton() {
 		save.click();
+	}
+
+	public boolean isManageNewsDisplayed() {
+		return manageNewsText.isDisplayed();
+	}
+
+	public String getTextFromManageNewsText() {
+		return manageNewsText.getText();
 	}
 
 }

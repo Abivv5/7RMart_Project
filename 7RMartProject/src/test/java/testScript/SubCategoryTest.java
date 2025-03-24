@@ -5,9 +5,11 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.SubCategoryPage;
 import utilities.ExcelUtility;
@@ -34,10 +36,22 @@ public class SubCategoryTest extends Base {
 		chooseFile.sendKeys(
 				"C:\\Users\\Abishika V V\\git\\7RMart_Project\\7RMartProject\\src\\test\\resources\\fruits.jpg");
 		subcategory.saveTheDetailsOfSubCategory();
-	}
+		boolean subCategoryDisplayed = subcategory.isSubCategoryDisplayed();
+		Assert.assertTrue(subCategoryDisplayed, Messages.SUBCATEGORYADDERROR);
+}
+	
 
 	@Test
-	public void verifyWhetherUserIsAbleToSearchTheDetailsOfSubCategory() {
+	public void verifyWhetherUserIsAbleToSearchTheDetailsOfSubCategory() throws IOException {
+		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
+		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
+		LoginPage login = new LoginPage(driver);
+		login.enterUsernameOnUsernameField(username);
+		login.enterPasswordOnPasswordField(password);
+		login.clickOnSignInButton();
+		SubCategoryPage subcategory = new SubCategoryPage(driver);
+		subcategory.clickManageCategory();
+		subcategory.clickSubCategory();
 		WebElement search = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-primary']"));
 		search.click();
 		WebElement searchCategory = driver.findElement(By.id("un"));
@@ -47,5 +61,7 @@ public class SubCategoryTest extends Base {
 		searchSubCategory.sendKeys("fresh vegetables");
 		WebElement searchButton = driver.findElement(By.xpath("//button[@class='btn btn-danger btn-fix']"));
 		searchButton.click();
+		boolean isSubCategorySearchDisplayed = subcategory.isSubCategorySearchDisplayed();
+		Assert.assertTrue(isSubCategorySearchDisplayed, Messages.SUBCATEGORYSEARCHERROR);
 	}
 }

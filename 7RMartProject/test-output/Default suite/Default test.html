@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 17 18:41:22 IST 2025</td>
+<td>Started on:</td><td>Thu Mar 20 11:43:08 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5000 ms)</td>
+<tr><td>Total time:</td><td>4 seconds (4227 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,13 +76,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testScript.AdminUsersTest.verifyWhetherTheUserIsAbleToUseAdminUserModule()'><b>verifyWhetherTheUserIsAbleToUseAdminUserModule</b><br>Test class: testScript.AdminUsersTest</td>
-<td><div><pre>java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:987)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:24)
-	at testScript.AdminUsersTest.verifyWhetherTheUserIsAbleToUseAdminUserModule(AdminUsersTest.java:29)
+<td title='testScript.LoginTest.verifyUserLoginWithValidCredentials()'><b>verifyUserLoginWithValidCredentials</b><br>Test class: testScript.LoginTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; because &quot;r&quot; is null
+	at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+	at testScript.LoginTest.verifyUserLoginWithValidCredentials(LoginTest.java:17)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -109,13 +106,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1516759394", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1516759394'><pre>java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:987)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-	at utilities.ExcelUtility.getStringData(ExcelUtility.java:24)
-	at testScript.AdminUsersTest.verifyWhetherTheUserIsAbleToUseAdminUserModule(AdminUsersTest.java:29)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1449987177", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1449987177'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)&quot; because &quot;r&quot; is null
+	at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+	at testScript.LoginTest.verifyUserLoginWithValidCredentials(LoginTest.java:17)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -143,8 +137,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>2</td>
-<td>testScript.AdminUsersTest@1e800aaa</td></tr>
+<td>0</td>
+<td>testScript.LoginTest@489115ef</td></tr>
 </table><p>
 </body>
 </html>

@@ -2,27 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-17T18:41:22 IST" name="Default suite" finished-at="2025-03-17T18:41:27 IST" duration-ms="5000">
+  <suite started-at="2025-03-20T11:43:08 IST" name="Default suite" finished-at="2025-03-20T11:43:12 IST" duration-ms="4227">
     <groups>
     </groups>
-    <test started-at="2025-03-17T18:41:22 IST" name="Default test" finished-at="2025-03-17T18:41:27 IST" duration-ms="5000">
-      <class name="testScript.AdminUsersTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.AdminUsersTest@1e800aaa]" started-at="2025-03-17T18:41:23 IST" name="initializeBrowser" finished-at="2025-03-17T18:41:25 IST" duration-ms="2824" status="PASS">
+    <test started-at="2025-03-20T11:43:08 IST" name="Default test" finished-at="2025-03-20T11:43:12 IST" duration-ms="4227">
+      <class name="testScript.LoginTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.LoginTest@489115ef]" started-at="2025-03-20T11:43:08 IST" name="initializeBrowser" finished-at="2025-03-20T11:43:11 IST" duration-ms="2775" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyWhetherTheUserIsAbleToUseAdminUserModule()[pri:0, instance:testScript.AdminUsersTest@1e800aaa]" started-at="2025-03-17T18:41:25 IST" name="verifyWhetherTheUserIsAbleToUseAdminUserModule" finished-at="2025-03-17T18:41:27 IST" duration-ms="2113" status="FAIL">
-          <exception class="java.lang.IllegalStateException">
+        <test-method signature="verifyUserLoginWithValidCredentials()[pri:0, instance:testScript.LoginTest@489115ef]" started-at="2025-03-20T11:43:11 IST" name="verifyUserLoginWithValidCredentials" finished-at="2025-03-20T11:43:11 IST" duration-ms="635" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot get a STRING value from a NUMERIC cell]]>
+              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" because "r" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:987)
-at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:336)
-at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:280)
-at utilities.ExcelUtility.getStringData(ExcelUtility.java:24)
-at testScript.AdminUsersTest.verifyWhetherTheUserIsAbleToUseAdminUserModule(AdminUsersTest.java:29)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" because "r" is null
+at utilities.ExcelUtility.getStringData(ExcelUtility.java:23)
+at testScript.LoginTest.verifyUserLoginWithValidCredentials(LoginTest.java:17)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -51,15 +48,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalStateException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWhetherTheUserIsAbleToUseAdminUserModule -->
-        <test-method is-config="true" signature="closeandQuit()[pri:0, instance:testScript.AdminUsersTest@1e800aaa]" started-at="2025-03-17T18:41:27 IST" name="closeandQuit" finished-at="2025-03-17T18:41:27 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyUserLoginWithValidCredentials -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@489115ef]" started-at="2025-03-20T11:43:11 IST" name="driverQuit" finished-at="2025-03-20T11:43:12 IST" duration-ms="756" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginWithValidCredentials status=FAILURE method=LoginTest.verifyUserLoginWithValidCredentials()[pri:0, instance:testScript.LoginTest@489115ef] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeandQuit -->
-      </class> <!-- testScript.AdminUsersTest -->
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testScript.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

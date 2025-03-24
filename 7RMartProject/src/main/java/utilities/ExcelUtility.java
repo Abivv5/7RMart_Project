@@ -30,7 +30,7 @@ public class ExcelUtility {
 		sh=w.getSheet(sheet);
 		XSSFRow r= sh.getRow(a);
 		XSSFCell c=r.getCell(b);
-	int x=(int) c.getNumericCellValue();//type casting process for 1 datatype to another datatype
+	int x=(int) c.getNumericCellValue();
 	return String.valueOf(x);
 		
 	}

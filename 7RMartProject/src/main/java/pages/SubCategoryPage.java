@@ -27,35 +27,38 @@ public class SubCategoryPage {
 	private WebElement chooseFile;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement saveButton;
+	@FindBy(xpath = "//h1[text()='Add Sub Category']")
+	private WebElement subCategoryText;
 
-public void clickManageCategory() {
-	manageCategory.click();
+	public void clickManageCategory() {
+		manageCategory.click();
+	}
+
+	public void clickSubCategory() {
+		subCategory.click();
+	}
+
+	public void clickNewButton() {
+		newButton.click();
+	}
+
+	public void enterTheNewsOnSubCategory(String messageColumn) {
+		subCategoryInNew.sendKeys(messageColumn);
+	}
+
+	public void saveTheDetailsOfSubCategory() {
+		saveButton.click();
+	}
+
+	public boolean isSubCategoryDisplayed() {
+		return subCategoryText.isDisplayed();
+	}
+
+	public String getTextFromSubCategoryText() {
+		return subCategoryText.getText();
+	}
+
+	public boolean isSubCategorySearchDisplayed() {
+		return subCategoryText.isDisplayed();
+	}
 }
-public void clickSubCategory() {
-	subCategory.click();
-}
-public void clickNewButton() {
-	newButton.click();
-}
-public void enterTheNewsOnSubCategory(String messageColumn) {
-	subCategoryInNew.sendKeys(messageColumn);
-}
-//public void fileUploadingInSubCategory() {
-	//chooseFile.
-//}
-public void saveTheDetailsOfSubCategory() {
-	saveButton.click();
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-
