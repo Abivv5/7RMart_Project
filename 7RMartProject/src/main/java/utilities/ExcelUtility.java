@@ -14,27 +14,25 @@ public class ExcelUtility {
 	static FileInputStream f;
 	static XSSFWorkbook w;
 	static XSSFSheet sh;
-	public static String getStringData(int a,int b, String sheet) throws IOException
-	{
-		f=new FileInputStream(Constants.TESTDATAFILE);
-		w=new XSSFWorkbook(f);
-		sh=w.getSheet(sheet);
-		XSSFRow r= sh.getRow(a);
-		XSSFCell c=r.getCell(b);
-		return c.getStringCellValue();	
-		
-	}
-	public static String getIntegerData(int a,int b, String sheet) throws IOException
-	{
-		f=new FileInputStream(Constants.TESTDATAFILE);
-		sh=w.getSheet(sheet);
-		XSSFRow r= sh.getRow(a);
-		XSSFCell c=r.getCell(b);
-	int x=(int) c.getNumericCellValue();
-	return String.valueOf(x);
-		
-	}
+
+	public static String getStringData(int a, int b, String sheet) throws IOException {
+		f = new FileInputStream(Constants.TESTDATAFILE);
+		w = new XSSFWorkbook(f);
+		sh = w.getSheet(sheet);
+		XSSFRow r = sh.getRow(a);
+		XSSFCell c = r.getCell(b);
+		return c.getStringCellValue();
 
 	}
 
+	public static String getIntegerData(int a, int b, String sheet) throws IOException {
+		f = new FileInputStream(Constants.TESTDATAFILE);
+		sh = w.getSheet(sheet);
+		XSSFRow r = sh.getRow(a);
+		XSSFCell c = r.getCell(b);
+		int x = (int) c.getNumericCellValue();
+		return String.valueOf(x);
 
+	}
+
+}

@@ -30,6 +30,6 @@ public class ManageNewsTest extends Base {
 		managenews.enterTheNewsOnNewsColumn(newscloumn);
 		managenews.clickSaveButton();
 		boolean manageNewsDisplayed = managenews.isManageNewsDisplayed();
-		Assert.assertTrue(manageNewsDisplayed,Messages.MANAGENEWSERROR);
+		Assert.assertTrue(manageNewsDisplayed, Messages.MANAGENEWSERROR);
 	}
 }

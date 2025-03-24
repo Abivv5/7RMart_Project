@@ -38,8 +38,7 @@ public class SubCategoryTest extends Base {
 		subcategory.saveTheDetailsOfSubCategory();
 		boolean subCategoryDisplayed = subcategory.isSubCategoryDisplayed();
 		Assert.assertTrue(subCategoryDisplayed, Messages.SUBCATEGORYADDERROR);
-}
-	
+	}
 
 	@Test
 	public void verifyWhetherUserIsAbleToSearchTheDetailsOfSubCategory() throws IOException {

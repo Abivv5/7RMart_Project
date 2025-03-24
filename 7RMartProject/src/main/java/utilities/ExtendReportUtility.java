@@ -8,7 +8,8 @@ public class ExtendReportUtility {
 
 	public synchronized static ExtentReports createExtentReports() {
 
-		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");//to create folder file
+		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");// to create
+																										// folder file
 
 		reporter.config().setReportName("7RMart SuperMarket"); //
 
@@ -16,7 +17,7 @@ public class ExtendReportUtility {
 
 		extentReports.setSystemInfo("Organization", "Obsqura");
 
-		extentReports.setSystemInfo("Name", " Abi "); 
+		extentReports.setSystemInfo("Name", " Abi ");
 
 		return extentReports;
 

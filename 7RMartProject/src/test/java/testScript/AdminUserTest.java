@@ -38,7 +38,7 @@ public class AdminUserTest extends Base {
 		adminUsers.clickOnSaveButton();
 		boolean adminUserDisplayed = adminUsers.isAdminUserSearchDisplayed();
 		Assert.assertTrue(adminUserDisplayed, Messages.ADMINUSERERROR);
-}
+	}
 
 	@Test
 	public void verifyWhetherUserIsAbleToSearchAdminUser() throws IOException {
@@ -61,6 +61,5 @@ public class AdminUserTest extends Base {
 		boolean adminUserSearchDisplayed = adminUsers.isAdminUserSearchDisplayed();
 		Assert.assertTrue(adminUserSearchDisplayed, Messages.ADMINUSERSEARCHERROR);
 	}
-
 
 }
