@@ -44,7 +44,7 @@ public class WaitUtility {
 
 	}
 
-	public void implicitWait() {
+	public void implicitWait(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITWAIT));
 
 	}

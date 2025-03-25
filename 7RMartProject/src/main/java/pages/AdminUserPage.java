@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class AdminUserPage {
 	public WebDriver driver;
 
@@ -24,7 +26,9 @@ public class AdminUserPage {
 	private WebElement userNameBox;
 	@FindBy(id = "password")
 	private WebElement passwordBox;
-	@FindBy(xpath = "//i[@class='fa fa-save']")
+	@FindBy (xpath="//select[@id='user_type']")
+	private WebElement userType;
+	@FindBy(xpath = "//button[@name='Create']")
 	private WebElement saveButton;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
 	private WebElement searchButton;
@@ -53,6 +57,11 @@ public class AdminUserPage {
 
 	public void enterPassword(String passwordd) {
 		passwordBox.sendKeys(passwordd);
+	}
+	public void selectUserType() {
+		userType.click();
+		PageUtility page =new PageUtility();
+		page.dropDownSelectionIndexValue(driver, 2, userType);
 	}
 
 	public void clickOnSaveButton() {

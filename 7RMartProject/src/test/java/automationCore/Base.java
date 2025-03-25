@@ -23,7 +23,7 @@ public class Base {
 		driver.get(" https://groceryapp.uniqassosiates.com/admin/login");
 		driver.manage().window().maximize();
 		WaitUtility wait = new WaitUtility();
-		wait.implicitWait();
+		wait.implicitWait(driver);
 
 	}
 

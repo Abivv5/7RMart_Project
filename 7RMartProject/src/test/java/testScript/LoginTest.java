@@ -13,6 +13,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
+	
 	@Test
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");

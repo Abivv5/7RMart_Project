@@ -7,7 +7,11 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testScript.HomeTest"/>
+      <class name="testScript.AdminUserTest">
+      <methods>
+      <include name="verifyWhetherTheUserIsAbleToAddNewUserToTheUsersList"></include>
+      </methods>
+      </class>
      
     </classes>
   </test> <!-- Test -->
