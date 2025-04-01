@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	
-	@Test
+	@Test(description="Whether user is successfully able to login with valid credentials",retryAnalyzer=retry.Retry.class,priority=1)
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -26,7 +26,7 @@ public class LoginTest extends Base {
 		Assert.assertTrue(isDashBoardDisplayed, Messages.VALIDCREDENTIALERROR);
 	}
 
-	@Test
+	@Test(description="Whether user is Not able to login with valid username and invalid password",groups= {"smoke"},priority=2)
 	public void verifyUserLoginWithValidUsernameAndInvalidPassword() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
@@ -39,7 +39,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actualResult, expectedResult, Messages.INVALIDPASSWORD);
 	}
 
-	@Test
+	@Test(description="Whether user is Not able to login with valid password and invalid username",priority=3)
 	public void verifyUserLoginWithInvalidUsernameAndValidPassword() throws IOException {
 		String username = ExcelUtility.getStringData(2, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(2, 1, "LoginPage");
@@ -52,7 +52,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actualResult, expectedResult, Messages.INVALIDUSERNAME);
 	}
 
-	@Test
+	@Test(description="Whether user is Not able to login with Invalid credentials",priority=4)
 	public void verifyUserLoginWithInvalidCredentials() throws IOException {
 		String username = ExcelUtility.getStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(3, 1, "LoginPage");

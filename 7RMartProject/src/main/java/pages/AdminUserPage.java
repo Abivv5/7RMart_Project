@@ -26,7 +26,7 @@ public class AdminUserPage {
 	private WebElement userNameBox;
 	@FindBy(id = "password")
 	private WebElement passwordBox;
-	@FindBy (xpath="//select[@id='user_type']")
+	@FindBy(xpath = "//select[@id='user_type']")
 	private WebElement userType;
 	@FindBy(xpath = "//button[@name='Create']")
 	private WebElement saveButton;
@@ -34,6 +34,8 @@ public class AdminUserPage {
 	private WebElement searchButton;
 	@FindBy(id = "un")
 	private WebElement userNameSearch;
+	@FindBy(xpath = "//select[@name='ut']")
+	private WebElement userTypeForSearch;
 	@FindBy(xpath = "//i[@class='fa fa-search']")
 	private WebElement searchClick;
 	@FindBy(xpath = "//h1[text()='Admin Users']")
@@ -58,9 +60,10 @@ public class AdminUserPage {
 	public void enterPassword(String passwordd) {
 		passwordBox.sendKeys(passwordd);
 	}
+
 	public void selectUserType() {
 		userType.click();
-		PageUtility page =new PageUtility();
+		PageUtility page = new PageUtility();
 		page.dropDownSelectionIndexValue(driver, 2, userType);
 	}
 
@@ -75,11 +78,14 @@ public class AdminUserPage {
 	public void enterUserNameForSearch(String username2) {
 		userNameSearch.sendKeys(username2);
 	}
-
+	public void selectUserTypeForSearch() {
+		userTypeForSearch.click();
+		PageUtility page1 = new PageUtility();
+		page1.dropDownSelectionIndexValue(driver, 2, userTypeForSearch);
+	}
 	public void clickSearch() {
 		searchClick.click();
 	}
-
 	public boolean isAdminUserSearchDisplayed() {
 		return adminUserText.isDisplayed();
 	}

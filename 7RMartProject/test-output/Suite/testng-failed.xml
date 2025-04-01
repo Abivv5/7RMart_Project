@@ -5,14 +5,16 @@
     <listener class-name="listener.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testScript.AdminUserTest">
+      <class name="testScript.LoginTest">
         <methods>
           <include name="initializeBrowser"/>
+          <include name="verifyUserLoginWithInvalidCredentials"/>
           <include name="driverQuit"/>
-          <include name="verifyWhetherTheUserIsAbleToAddNewUserToTheUsersList"/>
+          <include name="verifyUserLoginWithValidUsernameAndInvalidPassword"/>
         </methods>
-      </class> <!-- testScript.AdminUserTest -->
+      </class> <!-- testScript.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

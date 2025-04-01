@@ -14,7 +14,7 @@ import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base {
-	@Test
+	@Test(description="Whether user is able to enter the news in Manage news page")
 	public void verifyWhetherUserIsAbleToAccessManageNewsTest() throws IOException {
 
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");

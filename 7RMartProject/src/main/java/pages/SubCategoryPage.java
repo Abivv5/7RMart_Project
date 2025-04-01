@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class SubCategoryPage {
 	public WebDriver driver;
 
@@ -27,6 +29,15 @@ public class SubCategoryPage {
 	private WebElement chooseFile;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement saveButton;
+	@FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
+	private WebElement searchButton;
+	@FindBy(xpath = "//select[@class='form-control selectpicker']")
+	private WebElement categorySelectionSearch;
+	@FindBy(xpath = "//input[@class='form-control']")
+	private WebElement subCategoryinSearch;
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement searchButtonForSearch;
+
 	@FindBy(xpath = "//h1[text()='Add Sub Category']")
 	private WebElement subCategoryText;
 
@@ -42,12 +53,32 @@ public class SubCategoryPage {
 		newButton.click();
 	}
 
+	public void selectCategory() {
+		categorySelect.click();
+		PageUtility page = new PageUtility();
+		page.dropDownSelectionIndexValue(driver, 8, categorySelect);
+	}
+
 	public void enterTheNewsOnSubCategory(String messageColumn) {
 		subCategoryInNew.sendKeys(messageColumn);
 	}
 
 	public void saveTheDetailsOfSubCategory() {
 		saveButton.click();
+	}
+
+	public void clickSearchButton() {
+		searchButton.click();
+	}
+
+	public void selectCategoryForSearch() {
+		categorySelectionSearch.click();
+		PageUtility page = new PageUtility();
+		page.dropDownSelectionIndexValue(driver, 13, categorySelectionSearch);
+	}
+
+	public void clickSearchButtonForSearch() {
+		searchButtonForSearch.click();
 	}
 
 	public boolean isSubCategoryDisplayed() {

@@ -14,7 +14,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
-	@Test
+	@Test(description="Whether user is successfully able to logout from the Homepage", retryAnalyzer=retry.Retry.class )
 	public void verifyWhetherUserIsAbleToLogoutAfterSuccessfulLogin() throws IOException {
 
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");

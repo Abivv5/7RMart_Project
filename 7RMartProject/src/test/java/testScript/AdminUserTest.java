@@ -18,7 +18,7 @@ import utilities.RandomDataUtility;
 
 public class AdminUserTest extends Base {
 	
-	@Test
+	@Test(description="Whether user is able to add a new usee to the userlist page")
 	public void verifyWhetherTheUserIsAbleToAddNewUserToTheUsersList() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -41,7 +41,7 @@ public class AdminUserTest extends Base {
 		Assert.assertTrue(adminUserDisplayed, Messages.ADMINUSERERROR);
 	}
 
-	@Test
+	@Test(description="Whether user is able to search the user details in admin user page")
 	public void verifyWhetherUserIsAbleToSearchAdminUser() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -56,9 +56,7 @@ public class AdminUserTest extends Base {
 		RandomDataUtility faker=new RandomDataUtility();
 		String username2 = faker.createRandomUsername();
 		adminUsers.enterUserNameForSearch(username2);
-		WebElement userTypee = driver.findElement(By.id("ut"));
-		Select select = new Select(userTypee);
-		select.selectByIndex(2);
+		adminUsers.selectUserTypeForSearch();
 		adminUsers.clickSearch();
 		boolean adminUserSearchDisplayed = adminUsers.isAdminUserSearchDisplayed();
 		Assert.assertTrue(adminUserSearchDisplayed, Messages.ADMINUSERSEARCHERROR);
